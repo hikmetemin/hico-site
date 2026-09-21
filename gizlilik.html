@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google.com https://*.google.com.tr https://*.google-analytics.com https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com; font-src 'self'; connect-src 'self' https://*.google.com https://*.google.com.tr https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com; frame-src https://www.googletagmanager.com; form-action 'none'; base-uri 'self'; object-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gizlilik, KVKK ve Kullanım Koşulları | Hico Polimer</title>
 <meta name="description" content="Hico Polimer gizlilik politikası, 6698 sayılı KVKK kapsamında aydınlatma metni ve web sitesi kullanım koşulları.">
@@ -15,6 +15,7 @@
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/fonts.css">
 <link rel="stylesheet" href="/css/page.css">
+<link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
 <header class="top">
@@ -60,7 +61,8 @@
     <ul>
       <li><b>Web3Forms:</b> iletişim formu gönderimlerinin e-postaya iletilmesi (sunucular yurt dışında bulunabilir)</li>
       <li><b>Render:</b> web sitesi barındırma altyapısı</li>
-      <li><b>Google Haritalar:</b> iletişim bölümündeki harita gösterimi; harita yüklendiğinde IP adresi gibi teknik verileri işleyebilir (yazı tipleri sitemizden sunulur, Google sunucularına bağlanmaz)</li>
+      <li><b>Google Haritalar:</b> iletişim bölümündeki harita, yalnızca &ldquo;Haritayı Göster&rdquo; düğmesine tıkladığınızda yüklenir; yüklendiğinde IP adresi gibi teknik verileri işleyebilir (yazı tipleri sitemizden sunulur, Google sunucularına bağlanmaz)</li>
+      <li><b>Google Ads:</b> yalnızca çerez onayı verdiğinizde; reklam ölçümü için (bkz. Çerezler bölümü)</li>
     </ul>
     <p>Yasal zorunluluk halinde yetkili kamu kurum ve kuruluşlarıyla paylaşım yapılabilir. Yurt dışına aktarım, KVKK m.9 hükümlerine uygun olarak gerçekleştirilir.</p>
 
@@ -70,8 +72,11 @@
     <h2>7. Veri güvenliği</h2>
     <p>Verilerinizin hukuka aykırı erişim, kayıp veya ifşasını önlemek için makul teknik ve idari tedbirleri alıyoruz: HTTPS ile şifreli bağlantı, erişimin yetkili kişilerle sınırlandırılması ve güvenlik başlıklarının uygulanması. Bununla birlikte internet üzerinden yapılan hiçbir iletimin mutlak güvenli olduğu garanti edilemez.</p>
 
-    <h2>8. Çerezler</h2>
-    <p>Bu web sitesi şu anda pazarlama veya analiz amaçlı çerez kullanmamaktadır. Analiz veya reklam aracı eklenmesi halinde bu metin ve çerez bilgilendirmesi önceden güncellenecek, gerekli olduğu durumda onayınıza sunulacaktır.</p>
+    <h2 id="cerezler">8. Çerezler</h2>
+    <p><b>Zorunlu olmayan çerezler yalnızca onayınızla kullanılır.</b> Sitemizi ilk ziyaretinizde çıkan bilgilendirme bandında &ldquo;Kabul Et&rdquo; veya &ldquo;Reddet&rdquo; seçeneğini sunuyoruz. &ldquo;Reddet&rdquo;i seçerseniz Google reklam ve ölçüm çerezleri yüklenmez ve site aynen çalışır.</p>
+    <p><b>Kabul ederseniz:</b> Google Ads (Google etiketi) kullanılır. Bu, reklamlarımızın işe yarayıp yaramadığını ölçmemizi sağlar (örneğin bir reklamı tıklayan kişinin teklif formunu doldurup doldurmadığı, telefon veya WhatsApp bağlantısına tıklayıp tıklamadığı). Bu kapsamda Google tarafından çerezler yerleştirilir ve IP adresi, tarayıcı ve cihaz bilgisi, ziyaret ettiğiniz sayfa gibi veriler Google&rsquo;a (yurt dışında bulunan sunucularda) aktarılabilir.</p>
+    <p><b>Zorunlu/işlevsel saklama:</b> Çerez tercihinizi hatırlamak için tarayıcınızın yerel depolamasında (localStorage) bir kayıt tutulur; bu kayıt yalnızca tercihinizi içerir.</p>
+    <p><b>Tercihinizi değiştirmek</b> için sayfa altındaki &ldquo;Çerez tercihleri&rdquo; bağlantısını kullanabilirsiniz. Onayı geri çektiğinizde çerezler silinir, ölçüm durur. Ayrıca tarayıcı ayarlarınızdan çerezleri dilediğiniz zaman silebilirsiniz.</p>
 
     <h2>9. Haklarınız ve başvuru</h2>
     <p>KVKK m.11 uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini isteme, KVKK m.7 çerçevesinde silinmesini veya yok edilmesini isteme, bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme, otomatik sistemler aracılığıyla aleyhinize bir sonuç doğması halinde itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğramanız halinde zararın giderilmesini talep etme haklarına sahipsiniz.</p>
@@ -94,9 +99,10 @@
     <h2>12. Değişiklikler</h2>
     <p>Bu metni mevzuat veya faaliyetlerimizdeki değişikliklere göre güncelleme hakkımızı saklı tutarız. Güncel sürüm bu sayfada yayımlanır.</p>
 
-    <p style="margin-top:40px; font-size:13px;">Son güncelleme: Eylül 2026</p>
+    <p style="margin-top:40px; font-size:13px;">Son güncelleme: 22 Eylül 2026</p>
   </div>
 </main>
-<footer class="bottom"><div class="wrap"><span>&copy; 2026 Hico Polimer</span><a href="/">Ana Sayfa</a></div></footer>
+<footer class="bottom"><div class="wrap"><span>&copy; 2026 Hico Polimer</span><a href="/">Ana Sayfa</a><button type="button" class="linklike" data-cookie-settings>Çerez tercihleri</button></div></footer>
+<script src="/js/consent.js" defer></script>
 </body>
 </html>

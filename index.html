@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com; form-action https://api.web3forms.com; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google.com https://*.google.com.tr https://*.google-analytics.com https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com; font-src 'self'; connect-src 'self' https://api.web3forms.com https://*.google.com https://*.google.com.tr https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com; frame-src https://www.google.com https://td.doubleclick.net https://www.googletagmanager.com; form-action https://api.web3forms.com; base-uri 'self'; object-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Fason Plastik Granül İşleme | Hico Polimer – Gebze, Kocaeli</title>
 <meta name="description" content="Üretim firelerinizi filtreleyip granüle çeviriyoruz; malzeme sizde kalır, yalnızca işçilik ödersiniz. PP, PE, PS, ABS, PC, EVA. Gebze, Kocaeli.">
@@ -443,39 +443,11 @@
   .trust li, .trust li:first-child{text-align:center;}
   .eyebrow{justify-content:center;}
 </style>
-<!-- ========================================================================
-  REKLAM TAKİP KODLARI (Google Ads + Meta Pixel)
-  Şu an devre dışı — kendi ID'lerinizi aldığınızda aşağıdaki iki bloktaki
-  "GT-XXXXXXX" ve "XXXXXXXXXXXXXXX" yerlerini değiştirip yorum işaretlerini
-  ( <!-- ve --> ) kaldırmanız yeterli. Adımlar sohbette anlatıldı.
-========================================================================= -->
-
-<!-- GOOGLE ADS / GOOGLE TAG — buraya kendi Google Tag ID'nizi yazın
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-XXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GT-XXXXXXX');
-</script>
--->
-
-<!-- META (FACEBOOK/INSTAGRAM) PIXEL — buraya kendi Pixel ID'nizi yazın
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'XXXXXXXXXXXXXXX');
-  fbq('track', 'PageView');
-</script>
--->
-
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
 <meta name="theme-color" content="#0a0908">
+<link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
 
@@ -683,7 +655,7 @@
           <a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=40.8768704,29.4430895" target="_blank" rel="noopener">Yol Tarifi Al &rarr;</a>
         </div>
         <div class="contact-info-item"><div class="lbl">Çalışma Saatleri</div><div class="val" style="font-size:16px; line-height:1.6;">Pazartesi &ndash; Cumartesi &nbsp;08:00 &ndash; 18:00<br><span style="color:var(--smoke); font-weight:500;">Pazar kapalı</span></div></div>
-        <div class="map-box"><iframe title="Hico Polimer konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=40.8768704,29.4430895&amp;z=16&amp;output=embed"></iframe></div>
+        <div class="map-box" id="map-box"><div class="map-consent"><p>Harita Google Haritalar tarafından sunulur. Yüklemek için tıklayın.</p><button type="button" id="map-load">Haritayı Göster</button></div></div>
       </div>
       <div class="form-box reveal">
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -743,7 +715,7 @@
         </ul>
       </div>
     </div>
-    <div class="fbottom"><span>&copy; 2026 Hico Polimer</span><span>HİCO İNŞAAT SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</span></div>
+    <div class="fbottom"><span>&copy; 2026 Hico Polimer</span><span>HİCO İNŞAAT SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</span><button type="button" class="linklike" data-cookie-settings>Çerez tercihleri</button></div>
   </div>
 </footer>
 
@@ -1159,12 +1131,7 @@ document.querySelectorAll('.chip').forEach(function(c){
 
 /* ---- ad conversion tracking: fires only if gtag/fbq scripts are actually
    installed above — safe no-op until you add real IDs ---- */
-document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
-  a.addEventListener('click', function(){
-    if(typeof gtag === 'function'){ gtag('event', 'conversion', {'send_to': 'GT-XXXXXXX'}); }
-    if(typeof fbq === 'function'){ fbq('track', 'Contact'); }
-  });
-});
+/* phone / WhatsApp click tracking now lives in js/consent.js (consent-gated) */
 
 /* ---- real form submission via Web3Forms (no backend needed) ---- */
 var contactForm = document.getElementById('contact-form');
@@ -1215,6 +1182,10 @@ document.querySelectorAll('nav a[href^="#"], .mobile-panel a[href^="#"]').forEac
 var burger = document.getElementById('nav-burger');
 if(burger){ burger.addEventListener('click', function(){ document.getElementById('mobile-panel').classList.toggle('open'); }); }
 window.addEventListener('load', function(){ if(!reduced && gsapReady){ try{ ScrollTrigger.refresh(); }catch(e){} } });
+</script>
+<script src="/js/consent.js" defer></script>
+<script>
+(function(){var b=document.getElementById("map-load");if(!b)return;b.addEventListener("click",function(){var box=document.getElementById("map-box");var f=document.createElement("iframe");f.title="Hico Polimer konumu";f.loading="lazy";f.referrerPolicy="no-referrer-when-downgrade";f.src="https://www.google.com/maps?q=40.8768704,29.4430895&z=16&output=embed";box.innerHTML="";box.appendChild(f);});})();
 </script>
 </body>
 </html>
