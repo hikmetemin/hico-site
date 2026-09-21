@@ -146,6 +146,11 @@
   .mono{font-family:'IBM Plex Mono',monospace;}
   img{max-width:100%; display:block;}
 
+  /* ===== FLOW LINE (signature element) ===== */
+  #flow-line-wrap{position:fixed; left:0; top:0; bottom:0; width:100%; pointer-events:none; z-index:5;}
+  #flow-svg{width:100%; height:100%;}
+  #flow-path{fill:none; stroke:var(--brass); stroke-width:1.4; opacity:.55; filter:drop-shadow(0 0 3px rgba(198,162,77,.5));}
+  #flow-dot{fill:var(--brass-bright); filter:drop-shadow(0 0 6px rgba(236,207,136,.9));}
   .skip-link{position:absolute; left:-9999px; top:8px; z-index:2000; background:var(--brass); color:var(--ink); padding:10px 16px; font-weight:700; font-size:13px;}
   .skip-link:focus{left:8px;}
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, .chip:focus-visible{outline:2px solid var(--brass-bright); outline-offset:3px;}
@@ -195,7 +200,8 @@
   @keyframes marqueeScroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
   #hero-canvas{position:absolute; inset:0; z-index:1; width:100%; height:100%;}
-  .hero-vignette{position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg, rgba(10,9,8,0) 0%, rgba(10,9,8,.08) 60%, rgba(10,9,8,.55) 100%), radial-gradient(ellipse 60% 50% at 50% 50%, transparent 65%, rgba(10,9,8,.3) 100%);}
+  .hero-vignette{position:absolute; inset:0; z-index:2; pointer-events:none; background:radial-gradient(ellipse 62% 46% at 50% 62%, rgba(10,9,8,.72) 0%, rgba(10,9,8,.5) 55%, rgba(10,9,8,0) 100%), linear-gradient(180deg, rgba(10,9,8,0) 0%, rgba(10,9,8,.08) 60%, rgba(10,9,8,.55) 100%);}
+  .hero h1, .hero p, .hero-eyebrow{text-shadow:0 2px 24px rgba(10,9,8,.85);}
 
   /* ===== TRUST BAR ===== */
   .trust{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--ink-2);}
@@ -356,6 +362,66 @@
   .wa-fab:hover{background:#25b862;}
   @keyframes pulseFab{ 0%,100%{box-shadow:0 8px 24px rgba(0,0,0,.4), 0 0 0 0 rgba(198,162,77,.5);} 50%{box-shadow:0 8px 24px rgba(0,0,0,.4), 0 0 0 10px rgba(198,162,77,0);} }
   @media(max-width:600px){ .call-fab span{display:none;} .call-fab{padding:16px; border-radius:50%;} }
+
+  /* ===== CENTERED LAYOUT (site-wide) ===== */
+  body{text-align:center;}
+  .hero-inner{text-align:center;}
+  .hero h1{margin-left:auto; margin-right:auto;}
+  .hero-eyebrow{display:flex; align-items:center; justify-content:center; gap:12px;}
+  .hero-eyebrow::before, .hero-eyebrow::after{content:''; width:28px; height:1px; background:var(--brass);}
+  .hero-sub-row{flex-direction:column; align-items:center; gap:34px;}
+  .hero p{margin-left:auto; margin-right:auto; max-width:560px;}
+  .hero-actions{justify-content:center; flex-wrap:wrap;}
+  #urunler .eyebrow, #uretim .eyebrow{justify-content:center !important;}
+  #urunler h2.title, #uretim h2.title{text-align:center !important; margin-left:auto !important;}
+  #urunler .lede, #uretim .lede{text-align:center !important; margin-left:auto !important;}
+  #urunler .wrap > div:nth-of-type(2), #uretim .wrap > div:nth-of-type(2){flex-direction:column; align-items:center !important; gap:14px !important;}
+  .why-block{margin-left:auto; margin-right:auto; text-align:center;}
+  .why-block p{margin-left:auto; margin-right:auto;}
+  .about-grid p, .p-card p, .principle-row p, .flow-step p, .faq-a p, .stat-strip p, .sector-grid p{margin-left:auto; margin-right:auto;}
+  .about-grid{text-align:center;}
+  .principle-row{flex-direction:column; align-items:center; gap:6px; text-align:center;}
+  .principle-row .pn{min-width:0;}
+  .p-card{text-align:center;}
+  .p-card p{max-width:300px;}
+  .stat-strip>div{text-align:center;}
+  .fason-photos figcaption{text-align:center;}
+  .conveyor-nav{justify-content:center; flex-direction:column; gap:22px;}
+
+  /* timeline: centered spine, centered steps */
+  .flow-track{padding-left:0; max-width:760px; margin-left:auto; margin-right:auto;}
+  .flow-spine{left:50%;}
+  .flow-step{text-align:center; padding:34px 0 84px;}
+  .flow-step:last-child{padding-bottom:0;}
+  .flow-step .dot{left:50%; top:10px; transform:translateX(-50%);}
+  .flow-step h4, .flow-step p{margin-left:auto; margin-right:auto;}
+  .flow-spine{display:none;}
+  .flow-step{position:relative;}
+  .flow-step:not(:last-child)::after{content:''; position:absolute; left:50%; bottom:14px; height:52px; width:1px; background:linear-gradient(180deg, var(--brass-deep), transparent);}
+
+  /* FAQ: centered question and answer */
+  .faq-q{position:relative; justify-content:center; text-align:center; padding:28px 44px;}
+  .faq-q .qnum{position:absolute; left:0; min-width:0;}
+  .faq-q h3{flex:0 1 auto;}
+  .faq-q .plus{position:absolute; right:0;}
+  .faq-a p{padding:0 0 28px 0; margin-left:auto; margin-right:auto; text-align:center;}
+
+  /* contact: centered info column, form stays readable */
+  .contact-info-item{text-align:center;}
+  .contact-info-item .val{align-items:center;}
+  .contact-grid{align-items:start;}
+  .consent{text-align:left;}
+  .field label, .field input, .field textarea{text-align:left;}
+  .chip-group{justify-content:center;}
+  .submit-btn{display:block; margin-left:auto; margin-right:auto;}
+  #form-status{text-align:center;}
+  .map-box, .map-link{margin-left:auto; margin-right:auto;}
+
+  footer .fwrap{text-align:center; justify-items:center;}
+  footer img{margin-left:auto; margin-right:auto;}
+  .fbottom{justify-content:center; text-align:center; gap:6px 28px;}
+  .trust li, .trust li:first-child{text-align:center;}
+  .eyebrow{justify-content:center;}
 </style>
 <!-- ========================================================================
   REKLAM TAKİP KODLARI (Google Ads + Meta Pixel)
@@ -392,6 +458,9 @@
 </head>
 <body>
 
+<div id="flow-line-wrap" aria-hidden="true">
+  <svg id="flow-svg" preserveAspectRatio="none"><path id="flow-path" d=""/><circle id="flow-dot" r="4"/></svg>
+</div>
 <a href="#icerik" class="skip-link">Ana içeriğe geç</a>
 
 <nav>
@@ -457,7 +526,7 @@
   <div class="wrap">
     <div class="eyebrow reveal">Kimler İçin</div>
     <h2 class="title reveal">Plastik işleyen her üretici için</h2>
-    <p class="lede reveal">Büyük fabrikaların imalat firelerinden küçük atölyelerin temiz hurdasına kadar; plastikle çalışan her sektörle çalışıyoruz.</p>
+    <p class="lede reveal">Ağırlıklı olarak büyük üreticilerin imalat fireleriyle çalışıyoruz. Plastikle üretim yapan her işletmenin temiz hurdasını da değerlendiriyoruz.</p>
     <div class="sector-grid">
       <div class="reveal"><h3>Otomotiv Yan Sanayi</h3><p>Trim, çıta, tampon ve iç aksam üretiminden çıkan fireler ve kalıp atıkları.</p></div>
       <div class="reveal"><h3>Çıta &amp; Profil</h3><p>Ekstrüzyon hattı başlangıç firesi, kesim artıkları ve profil hurdaları.</p></div>
@@ -589,7 +658,7 @@
         <div class="contact-info-item"><div class="lbl">Adres</div><div class="val">Balçık Mah. 3271. Sokak No: 34<br>Gebze / Kocaeli</div>
           <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Bal%C3%A7%C4%B1k+Mah.+3271.+Sokak+No+34+Gebze+Kocaeli" target="_blank" rel="noopener">Yol Tarifi Al &rarr;</a>
         </div>
-        <div class="contact-info-item"><div class="lbl">Çalışma Saatleri</div><div class="val" style="font-size:16px; line-height:1.6;">Pazartesi &ndash; Cuma<br>Cumartesi öğlene kadar<br><span style="color:var(--smoke); font-weight:500;">Pazar kapalı</span></div></div>
+        <div class="contact-info-item"><div class="lbl">Çalışma Saatleri</div><div class="val" style="font-size:16px; line-height:1.6;">Pazartesi &ndash; Cuma<br>Cumartesi 13:00&rsquo;e kadar<br><span style="color:var(--smoke); font-weight:500;">Pazar kapalı</span></div></div>
         <div class="map-box"><iframe title="Hico Polimer konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Bal%C3%A7%C4%B1k+Mah.+3271.+Sokak+No+34+Gebze+Kocaeli&amp;output=embed"></iframe></div>
       </div>
       <div class="form-box reveal">
@@ -887,6 +956,33 @@ function lighten(hex, amt){
 }
 
 
+/* ---- signature flow line: draws down through the whole page ---- */
+function buildFlowPath(){
+  var docH = document.body.scrollHeight;
+  var svg = document.getElementById('flow-svg');
+  svg.setAttribute('viewBox','0 0 100 '+docH);
+  var path = document.getElementById('flow-path');
+  var pts = [];
+  var segs = 14;
+  for(var i=0;i<=segs;i++){
+    var y = (docH/segs)*i;
+    var x = 6 + Math.sin(i*1.3)*3;
+    pts.push(x.toFixed(2)+','+y.toFixed(2));
+  }
+  var d = 'M'+pts[0];
+  for(var j=1;j<pts.length;j++){ d += ' L'+pts[j]; }
+  path.setAttribute('d', d);
+  return path;
+}
+var flowPath = buildFlowPath();
+var flowLen = flowPath.getTotalLength();
+flowPath.style.strokeDasharray = flowLen;
+flowPath.style.strokeDashoffset = flowLen;
+window.addEventListener('resize', function(){
+  flowPath = buildFlowPath();
+  flowLen = flowPath.getTotalLength();
+});
+
 if(!reduced && gsapReady){
  try{
   gsap.set('.hero h1 .row span', {y:'110%'});
@@ -927,6 +1023,17 @@ if(!reduced && gsapReady){
       });
     });
   }
+  gsap.to(flowPath, {
+    strokeDashoffset:0, ease:'none',
+    scrollTrigger:{trigger:document.body, start:'top top', end:'bottom bottom', scrub:0.4,
+      onUpdate:function(self){
+        var pt = flowPath.getPointAtLength(flowLen*self.progress);
+        document.getElementById('flow-dot').setAttribute('cx', pt.x);
+        document.getElementById('flow-dot').setAttribute('cy', pt.y);
+      }
+    }
+  });
+  ScrollTrigger.addEventListener('refreshInit', buildFlowPath);
  }catch(e){ console.error('animation init failed, page remains usable:', e); }
 }
 
