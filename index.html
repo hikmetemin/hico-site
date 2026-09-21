@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com; form-action https://api.web3forms.com; base-uri 'self'; object-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Fason Plastik Granül İşleme | Hico Polimer – Gebze, Kocaeli</title>
 <meta name="description" content="Üretim firelerinizi filtreleyip granüle çeviriyoruz; malzeme sizde kalır, yalnızca işçilik ödersiniz. PP, PE, PS, ABS, PC, EVA. Gebze, Kocaeli.">
@@ -35,6 +36,10 @@
   "telephone":"+905327280636",
   "hasMap":"https://www.google.com/maps?cid=8776215853342821771",
   "geo":{"@type":"GeoCoordinates","latitude":40.8768704,"longitude":29.4430895},
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}
+  ],
   "address":{
     "@type":"PostalAddress",
     "streetAddress":"Balçık Mah. 3271. Sokak No: 34",
@@ -312,7 +317,7 @@
   .faq-q .plus{font-size:20px; color:var(--brass); transition:transform .3s; font-family:'IBM Plex Mono';}
   .faq-item.open .plus{transform:rotate(45deg);}
   .faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease;}
-  .faq-a p{padding:0 0 28px 46px; font-size:14px; color:var(--smoke); line-height:1.7; max-width:600px;}
+  .faq-a p{padding:0 0 30px 46px; font-size:17px; color:var(--brass-bright); line-height:1.75; max-width:680px;}
 
   /* ===== CONTACT ===== */
   .contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:80px; margin-top:70px;}
@@ -419,7 +424,7 @@
   .faq-q .qnum{position:absolute; left:0; min-width:0;}
   .faq-q h3{flex:0 1 auto;}
   .faq-q .plus{position:absolute; right:0;}
-  .faq-a p{padding:0 0 28px 0; margin-left:auto; margin-right:auto; text-align:center;}
+  .faq-a p{padding:0 0 30px 0; margin-left:auto; margin-right:auto; text-align:center;}
 
   /* contact: centered info column, form stays readable */
   .contact-info-item{text-align:center;}
@@ -674,7 +679,7 @@
         <div class="contact-info-item"><div class="lbl">Adres</div><div class="val">Balçık Mah. 3271. Sokak No: 34<br>Gebze / Kocaeli</div>
           <a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=40.8768704,29.4430895" target="_blank" rel="noopener">Yol Tarifi Al &rarr;</a>
         </div>
-        <div class="contact-info-item"><div class="lbl">Çalışma Saatleri</div><div class="val" style="font-size:16px; line-height:1.6;">Pazartesi &ndash; Cuma<br>Cumartesi 13:00&rsquo;e kadar<br><span style="color:var(--smoke); font-weight:500;">Pazar kapalı</span></div></div>
+        <div class="contact-info-item"><div class="lbl">Çalışma Saatleri</div><div class="val" style="font-size:16px; line-height:1.6;">Pazartesi &ndash; Cuma &nbsp;08:00 &ndash; 18:00<br>Cumartesi &nbsp;08:00 &ndash; 13:00<br><span style="color:var(--smoke); font-weight:500;">Pazar kapalı</span></div></div>
         <div class="map-box"><iframe title="Hico Polimer konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=40.8768704,29.4430895&amp;z=16&amp;output=embed"></iframe></div>
       </div>
       <div class="form-box reveal">
@@ -737,8 +742,8 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
 <script>
 var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var coarse = window.matchMedia('(pointer: coarse)').matches;
@@ -927,7 +932,7 @@ window.addEventListener('load', function(){
     initHeroFallback();
   } else {
     var s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';
+    s.src = 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'; s.integrity = 'sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu'; s.crossOrigin = 'anonymous';
     s.onload = function(){ initHero3D(); };
     s.onerror = function(){ initHeroFallback(); };
     document.head.appendChild(s);
@@ -1132,8 +1137,8 @@ document.querySelectorAll('.faq-item').forEach(function(item){
   var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
   q.addEventListener('click', function(){
     var isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(function(o){ o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight=null; });
-    if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight+'px'; }
+    document.querySelectorAll('.faq-item.open').forEach(function(o){ o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight=null; o.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+    if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight+'px'; q.setAttribute('aria-expanded','true'); }
   });
 });
 document.querySelectorAll('.chip').forEach(function(c){
