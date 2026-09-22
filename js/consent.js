@@ -2,6 +2,7 @@
    The Google tag is NOT loaded until the visitor clicks "Kabul Et". Choice is remembered in localStorage. */
 (function () {
   var TAG = 'AW-18466505324';
+  var GA4_ID = 'G-B8MX2FDF9X';
   var KEY = 'hico_consent_v1';
 
   function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
@@ -14,6 +15,7 @@
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
     window.gtag('config', TAG);
+    window.gtag('config', GA4_ID);
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + TAG;
