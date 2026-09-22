@@ -97,7 +97,7 @@ details.faq .ans p{max-width:660px; margin:0 auto; padding:0 0 26px; font-size:1
 
 /* footer */
 .foot{border-top:1px solid var(--line); padding:64px 0 34px; margin-top:0;}
-.fgrid{display:grid; grid-template-columns:1.3fr 1fr 1fr 1.2fr; gap:40px; justify-items:center;}
+.fgrid{display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr; gap:32px; justify-items:center;}
 .flogo{height:60px; width:auto; margin:0 auto 16px;}
 .foot p, .foot li{font-size:13px; color:var(--smoke); line-height:1.8; max-width:none; margin-left:0; margin-right:0;}
 .foot ul{list-style:none; margin:0; padding:0;}
@@ -105,6 +105,7 @@ details.faq .ans p{max-width:660px; margin:0 auto; padding:0 0 26px; font-size:1
 .foot li a{display:inline-block; padding:4px 0;}
 .foot a:hover{color:var(--brass-bright);}
 .fbottom{margin-top:44px; padding-top:22px; border-top:1px solid var(--line); font-size:12px; color:var(--smoke); display:flex; justify-content:center; flex-wrap:wrap; gap:6px 28px;}
+@media(max-width:1000px){ .fgrid{grid-template-columns:1fr 1fr 1fr;} }
 @media(max-width:900px){ .fgrid{grid-template-columns:1fr 1fr;} }
 @media(max-width:560px){ .fgrid{grid-template-columns:1fr; gap:30px;} }
 
